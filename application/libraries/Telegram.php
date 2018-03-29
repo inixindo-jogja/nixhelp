@@ -78,9 +78,13 @@ class Telegram
 				'method'  => 'POST',
 				'content' => http_build_query($data),
 			],
+			'ssl'=> [
+				'verify_peer'=>false,
+				'verify_peer_name'=>false,
+			],
 		];
 		$context = stream_context_create($options);
-
+		
 		$result = file_get_contents($url, false, $context);
 
 		return $result;
