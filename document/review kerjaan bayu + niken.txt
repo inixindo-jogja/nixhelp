@@ -1,0 +1,55 @@
+http://localhost/index.php/sdm/AturanPenilaian
+1) label filter di column atau placeholder
+2) filter lalu onchange tahun/triwulan => value terbawa
+   solusi : reload button
+3) jarak select Tahun + Triwulan dengan tabel aturan bisa diberi space => bisa digabung di label "Aturan Aspek Penilaian"
+4) input skala hanya boleh angka
+
+http://localhost/index.php/sdm/AturanCuti
+1) tampilan pertama apakah all data, atau tahun terakhir? filter tidak ada kata All/Semua
+2) clear filter => hapus + enter? value dari filter masih terbawa di on change tahun
+   solusi => $x: default tahun, reload datagrid dg $x
+3) label "Hutang Cuti Karyawan" + "Jatah Cuti Karyawan" default kalau tidak ada data => 0
+4) label filter di column atau placeholder
+5) jarak select Tahun dengan tabel data bisa diberi space => bisa digabung di label "Data Aturan Cuti"
+6) Default Cuti Setahun + Cuti Bersama Setahun + Jatah Cuti Karyawan + Tahun => harus angka
+7) Data tidak bisa diubah > 1x
+8) `aturancutiUserInput`,`aturancutiTglInput`,`aturancutiUserModif`,`aturancutiTglModif` belum terisi
+
+http://localhost/index.php/sdm/Cuti
+1) Displaying 1 to NaN of NaN items => muncul NaN
+2) Hapus dengan syarat belum dipakai cutinya, mengembalikan jumlah cuti yang dihapus ke setting
+
+http://localhost/index.php/sdm/Cuti/add
+1) Tanggal Ambil Cuti tidak boleh >  Tanggal Selesai Cuti 
+2) Jumlah Cuti Aktif terhitung otomatis dari (Tanggal Selesai Cuti - Tanggal Ambil Cuti) dan readonly
+3) onchange jika sudah terisi (Tanggal Ambil Cuti  && Tanggal Selesai Cuti) => cek  Jumlah Cuti Aktif tidak boleh lebih dari  Jatah Cuti Karyawan 
+4) `cutiUserInput`, `cutiTglInput` belum terisi
+
+http://localhost/index.php/sdm/Cuti/edit/9
+1) Tanggal Ambil Cuti tidak boleh >  Tanggal Selesai Cuti 
+2) Jumlah Cuti Aktif terhitung otomatis dari (Tanggal Selesai Cuti - Tanggal Ambil Cuti) dan readonly
+3) onchange jika sudah terisi (Tanggal Ambil Cuti  && Tanggal Selesai Cuti) => cek  Jumlah Cuti Aktif tidak boleh lebih dari  Jatah Cuti Karyawan
+4) `cutiUserModif`, `cutiTglModif` belum terisi
+
+http://localhost/index.php/sdm/KategoriCatatan
+1) Jika Tambah, terus Cancel lebih dari 1x => sisakan 1 / atau hilangkan saja baris yang tidak terpakai
+2) label filter di column atau placeholder
+3) Setelah hapus data, Tambah tidak jalan
+4) `kategoricatatanUserInput`, `kategoricatatanTglInput`, `kategoricatatanUserModif`,`kategoricatatanTglModif` belum terisi
+
+http://localhost/index.php/sdm/catatan
+1) Data catatan emang tidak bisa diedit?
+2) `catatankaryawanUserInput`, `catatankaryawanTglInput`, `catatankaryawanUserModif`, `catatankaryawanTglModif` belum terisi
+
+http://localhost/index.php/sdm/Agama
+1) label filter di column atau placeholder
+2) Setelah hapus data, Tambah tidak jalan
+3) `agamaUserInput`, `agamaTglInput`, `agamaUserModif`, `agamaTglModif` belum terisi
+
+
+
+
+
+
+ 

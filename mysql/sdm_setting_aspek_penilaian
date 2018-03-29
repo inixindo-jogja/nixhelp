@@ -1,0 +1,41 @@
+/*
+SQLyog Ultimate v12.09 (64 bit)
+MySQL - 10.1.28-MariaDB : Database - sinix_devel
+*********************************************************************
+*/
+
+/*!40101 SET NAMES utf8 */;
+
+/*!40101 SET SQL_MODE=''*/;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`sinix_devel` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+USE `sinix_devel`;
+
+/*Table structure for table `sdm_setting_aspek_penilaian` */
+
+DROP TABLE IF EXISTS `sdm_setting_aspek_penilaian`;
+
+CREATE TABLE `sdm_setting_aspek_penilaian` (
+  `setaspekpenilId` bigint(20) NOT NULL AUTO_INCREMENT,
+  `setaspekpenilAspekPenilaianId` int(11) DEFAULT NULL,
+  `setaspekpenilTahun` year(4) DEFAULT NULL,
+  `setaspekpenilTriwulan` enum('1','2','3','4') DEFAULT NULL,
+  `setaspekpenilSkala` double DEFAULT NULL,
+  PRIMARY KEY (`setaspekpenilId`),
+  UNIQUE KEY `UNIQUE` (`setaspekpenilAspekPenilaianId`,`setaspekpenilTahun`,`setaspekpenilTriwulan`),
+  CONSTRAINT `fk_setaspekpenil_refaspekpenilaian` FOREIGN KEY (`setaspekpenilAspekPenilaianId`) REFERENCES `sdm_ref_aspek_penilaian` (`aspekpenilaianId`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+/*Data for the table `sdm_setting_aspek_penilaian` */
+
+insert  into `sdm_setting_aspek_penilaian`(`setaspekpenilId`,`setaspekpenilAspekPenilaianId`,`setaspekpenilTahun`,`setaspekpenilTriwulan`,`setaspekpenilSkala`) values (1,1,2018,'2',4),(4,2,2018,'2',3),(5,3,2018,'2',3);
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
